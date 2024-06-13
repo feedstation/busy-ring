@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busy-ring status indicator CSS demo</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <form hx-indicator="#spinner">
+        <!-- form inputs go here -->
+        <button id="input-submit" type="submit">
+            <span class="busy-ring htmx-indicator" id="spinner" role="status" aria-hidden="true"><div></div><div></div><div></div><div></div></span>
+            Submit
+        </button>
+    </form>
+</body>
+
+<script>
+    //fake htmx indicator trigger - remove this script when actually using with htmx hx-indicator:
+    const submitButtonEl = document.getElementById('input-submit');
+    const spinnerEl = document.getElementById('spinner');
+    const formEl = document.querySelector('[hx-indicator="#spinner"]');
+    submitButtonEl.addEventListener('click', function(e) {
+        e.preventDefault();
+        spinnerEl.classList.add('htmx-request');
+        setTimeout(() => {
+            spinnerEl.classList.remove('htmx-request');
+            formEl.submit();
+        }, 1500);
+    });
+</script>
+
+</html>
