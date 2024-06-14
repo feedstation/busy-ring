@@ -7,6 +7,10 @@ An all CSS animated busy indicator
 Demo code (in `index.html`) is set up to use with HTMX hx-indicator<br>
 This code includes a fakey JS trigger to test without HTMX
 
+Live demo of initial version on jsFiddle: [https://jsfiddle.net/mikeypie/t8mvh0up/](https://jsfiddle.net/mikeypie/Lmwfz7p0/)
+
+## Usage
+
 1. Import the CSS
 
    ```
